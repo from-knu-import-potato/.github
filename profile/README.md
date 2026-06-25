@@ -1,6 +1,6 @@
 ## BARO 팀원 소개
 
-<table width="100%">
+<table width="120%">
   <tbody>
     <tr>
       <td align="center"><a href="https://github.com/daaoooy"><img src="https://github.com/daaoooy.png" width="150px;" alt="유다연"/><br /><b>[팀장] 유다연</b></a><br />FE, BE</td>
