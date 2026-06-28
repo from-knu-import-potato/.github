@@ -371,7 +371,7 @@ develop ──→ release/vX.Y.Z ──→ main
 
 ### 로고 (Logo)
 
-| <img width="50%" alt="general logo" src="./assets/baro-logo.png" /> | <img width="50%" alt="app icon" src="./assets/baro-icon.png" /> |
+| <img width="30%" alt="general logo" src="./assets/baro-logo.png" /> | <img width="70%" alt="app icon" src="./assets/baro-icon.png" /> |
 | :-----------------------------------------------------------------: | :-------------------------------------------------------------: |
 |                          **General Logo**                           |                          **App Icon**                           |
 
