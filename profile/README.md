@@ -5,7 +5,12 @@
 
 <br/>
 
-<a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=클릭해서%20바로%20이동&descAlignY=70&descSize=25&stroke=cacaca&reversal=false" width="100%" /></a>
+<table width="100%" border="0">
+  <tr>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=클릭해서%20바로%20이동&descAlignY=70&descSize=25&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=클릭해서%20바로%20이동&descAlignY=70&descSize=25&stroke=cacaca&reversal=false" width="100%" /></a></td>
+  </tr>
+</table>
 
 <br/>
 
