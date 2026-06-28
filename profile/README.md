@@ -15,6 +15,7 @@
 <p align="center">↑ 이미지를 클릭하면 해당 서비스로 이동합니다</p>
 
 <br/>
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20팀원%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
@@ -29,6 +30,7 @@
   </tbody>
 </table>
 
+<br/>
 <br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=시스템%20아키텍쳐&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
@@ -348,6 +350,7 @@ develop ──→ release/vX.Y.Z ──→ main
 
 </details>
 
+<br/>
 <br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=지원%20창구&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
