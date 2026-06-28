@@ -45,6 +45,12 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=프로젝트%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
+**BARO(바로)** 는 강원도 소규모 카페·식당 사장님을 위한 OCR·AI 기반 올인원 가게 운영 SaaS입니다.
+
+거래명세서를 카메라로 찍으면 AI가 자동으로 재고를 입고하고, 누적된 소비 데이터를 분석해 적정 발주량을 추천합니다. 손님은 QR 코드로 직접 주문하고, 사장님은 하루 영업이 끝나면 한 번의 마감으로 재고를 자동 정산합니다.
+
+주문 · 재고 · 발주 · 마감 — 혼자서 모든 걸 처리해야 하는 소상공인의 하루를 BARO 하나로 끝냅니다.
+
 <details>
 <summary><b>배경 — 강원도 소상공인 문제</b></summary>
 <br/>
