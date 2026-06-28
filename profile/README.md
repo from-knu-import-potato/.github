@@ -16,6 +16,10 @@
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20팀원%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
@@ -32,10 +36,12 @@
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=시스템%20아키텍쳐&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
-
-### 전체 구성도
 
 <picture>
   <img alt="Baro Service Architecture" src="./assets/baro-service-architecture.png">
@@ -203,6 +209,10 @@ sequenceDiagram
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20온보딩%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
@@ -350,6 +360,10 @@ develop ──→ release/vX.Y.Z ──→ main
 
 </details>
 
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
