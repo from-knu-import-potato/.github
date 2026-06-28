@@ -23,6 +23,34 @@
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=왜%20BARO%20인가요%3F&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="40"><kbd>B</kbd></td>
+    <td><b>Best Inventory</b> — 최적의 재고 상태 유지</td>
+  </tr>
+  <tr>
+    <td><kbd>A</kbd></td>
+    <td><b>AI-Assistant</b> — AI를 통한</td>
+  </tr>
+  <tr>
+    <td><kbd>R</kbd></td>
+    <td><b>Recommendation</b> — 맞춤형 발주 추천</td>
+  </tr>
+  <tr>
+    <td><kbd>O</kbd></td>
+    <td><b>One-click Operation</b> — 주문부터 마감까지 모든 가게 운영을 한 번에</td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20팀원%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 <table width="100%">
@@ -45,10 +73,10 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=배포%20환경&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-| 구분               | URL                                                         |
-| ------------------ | ----------------------------------------------------------- |
-| 프론트엔드         | https://baro-web.vercel.app                                 |
-| 백엔드 API         | https://baro-backend-production-c908.up.railway.app/v1/     |
+| 구분               | URL                                                     |
+| ------------------ | ------------------------------------------------------- |
+| 프론트엔드         | https://baro-web.vercel.app                             |
+| 백엔드 API         | https://baro-backend-production-c908.up.railway.app/v1/ |
 | API 문서 (Swagger) | https://baro-backend-production-c908.up.railway.app/doc |
 
 <br/>
@@ -355,6 +383,317 @@ sequenceDiagram
         end
     end
 ```
+
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=개발%20기술%20스택&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>프론트엔드</b></summary>
+<br/>
+
+| 기술                      | 버전 | 선택 이유                                                         |
+| ------------------------- | ---- | ----------------------------------------------------------------- |
+| **React**                 | 19   | 최신 Concurrent 기능, 안정적인 생태계                             |
+| **TypeScript**            | ~6.0 | 컴파일 타임 타입 안전성, 런타임 오류 사전 차단                    |
+| **Vite**                  | 8.0  | 빠른 HMR, ESM 기반 빌드로 개발 생산성 극대화                      |
+| **Tailwind CSS**          | 4.2  | 유틸리티 클래스 기반으로 디자인 일관성 유지, 별도 CSS 파일 불필요 |
+| **Shadcn/UI**             | -    | 접근성(a11y) 준수 컴포넌트 + 커스터마이징 완전 자유               |
+| **Zustand**               | 5.0  | 서버 상태와 분리된 경량 전역 UI 상태 관리, 보일러플레이트 최소화  |
+| **React Query**           | 5.x  | 서버 상태 캐싱·동기화·백그라운드 refetch 자동화                   |
+| **React Hook Form + Zod** | -    | 타입 안전 폼 검증, 서버 에러를 필드 단위로 바인딩                 |
+| **Axios**                 | 1.16 | 인터셉터 기반 전역 인증·에러 처리 용이                            |
+
+</details>
+
+<details>
+<summary><b>백엔드</b></summary>
+<br/>
+
+| 기술            | 버전 | 선택 이유                                                              |
+| --------------- | ---- | ---------------------------------------------------------------------- |
+| **Hono**        | 4.12 | 초경량 Node.js 프레임워크, OpenAPI/Swagger 내장, Railway 배포 최적     |
+| **Node.js**     | 22   | JavaScript 풀스택 일관성, 비동기 I/O 최적화                            |
+| **TypeScript**  | 5.8  | 엔드투엔드 타입 안전성 (프론트·백 타입 공유 가능)                      |
+| **Drizzle ORM** | 0.45 | 타입 안전 쿼리 빌더, Prisma 대비 경량·빠른 마이그레이션, Supabase 호환 |
+| **jose (JWT)**  | 6.2  | Web Crypto API 기반 표준 JWT, 엣지 환경 완전 호환                      |
+| **Zod**         | 4.4  | 런타임 스키마 검증 + OpenAPI 문서 자동 생성 (hono/zod-openapi)         |
+
+</details>
+
+<details>
+<summary><b>외부 서비스</b></summary>
+<br/>
+
+| 서비스                | 용도               | 선택 이유                                                         |
+| --------------------- | ------------------ | ----------------------------------------------------------------- |
+| **Kakao OAuth 2.0**   | 소셜 로그인        | 국내 소상공인 타겟 서비스 특성상 가장 높은 접근성                 |
+| **Naver CLOVA OCR**   | 거래명세서 인식    | 한국어 특화, 표 구조 인식 정확도가 Google Vision 대비 우수        |
+| **Google Gemini API** | AI 파싱·분석·추천  | 멀티모달 지원, 긴 컨텍스트 처리, 비용 대비 성능 우수              |
+| **Supabase**          | DB + 파일 스토리지 | PostgreSQL + S3 호환 스토리지 + 관리 UI를 단일 플랫폼에서 제공    |
+| **Vercel**            | 프론트엔드 배포    | React SPA 최적 CDN 배포, GitHub 연동 자동 배포                    |
+| **Railway**           | 백엔드 배포        | Node.js 서버 간단 배포, Nixpacks 빌드 자동화, 환경 변수 관리 편의 |
+
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=설계%20고민%20과정&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>1. 실시간 통신: WebSocket vs SSE</b></summary>
+<br/>
+
+**상황**: 손님이 주문하면 사장님 화면에 실시간으로 주문이 표시되어야 함
+
+|               | WebSocket             | SSE                      |
+| ------------- | --------------------- | ------------------------ |
+| 통신 방향     | 양방향                | 서버 → 클라이언트 단방향 |
+| 구현 복잡도   | 높음 (연결 관리 복잡) | 낮음 (HTTP 기반)         |
+| Railway 호환  | 별도 설정 필요        | HTTP 그대로 사용         |
+| 우리 요구사항 | 과도한 스펙           | 주문 수신만 필요         |
+
+**결정**: 주문 수신은 서버→클라이언트 단방향으로 충분하고, Railway 환경에서 HTTP 기반 SSE가 더 안정적이므로 **SSE 선택**
+
+</details>
+
+<details>
+<summary><b>2. SSE 구현: EventSource API vs 커스텀 fetch</b></summary>
+<br/>
+
+**상황**: SSE 연결 시 JWT 인증 헤더를 함께 보내야 함
+
+브라우저 내장 `EventSource`는 커스텀 HTTP 헤더를 설정할 수 없는 구조적 한계가 있음.
+
+**결정**: `fetch()` API로 SSE 스트림을 직접 파싱하는 **커스텀 SSE 클라이언트 구현**
+
+```ts
+// event: 와 data: 라인을 직접 파싱
+const response = await fetch(url, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+// ReadableStream으로 청크 단위 처리
+```
+
+</details>
+
+<details>
+<summary><b>3. 상태 관리: React Query + Zustand 역할 분리</b></summary>
+<br/>
+
+**고민**: 전역 상태를 하나의 라이브러리로 통합할지, 역할에 따라 분리할지
+
+| 상태 종류                 | 담당 라이브러리 | 예시                              |
+| ------------------------- | --------------- | --------------------------------- |
+| 서버 데이터 (캐싱·동기화) | React Query     | 주문 목록, 재고 현황, 마감 데이터 |
+| 클라이언트 UI 상태        | Zustand         | 인증 토큰, 영업일 상태, 재고 경고 |
+| 폼 상태                   | React Hook Form | 로그인 폼, 메뉴 등록 폼           |
+
+**결정**: 서버 상태와 UI 상태의 관심사를 명확히 분리하여 **React Query + Zustand 병행 사용**
+
+</details>
+
+<details>
+<summary><b>4. ORM: Prisma vs Drizzle</b></summary>
+<br/>
+
+|               | Prisma             | Drizzle          |
+| ------------- | ------------------ | ---------------- |
+| 번들 사이즈   | 큼 (바이너리 포함) | 경량             |
+| 타입 안전성   | 우수               | 우수             |
+| 엣지 환경     | 제약 있음          | 완전 지원        |
+| 마이그레이션  | 자동화 우수        | 코드로 직접 관리 |
+| Supabase 연동 | 별도 설정 필요     | 직접 연결        |
+
+**결정**: Railway·Supabase 환경에서 경량으로 동작하고 타입 안전성도 보장되는 **Drizzle 선택**
+
+</details>
+
+<details>
+<summary><b>5. OCR 결과 자동 확정 vs 수동 검수 유지</b></summary>
+<br/>
+
+**상황**: OCR + AI 파싱 결과를 자동으로 재고에 반영할지, 사람이 검토 후 확정할지
+
+OCR 인식 오류, AI 파싱 실패, 비표준 단위 등 다양한 예외 상황이 발생할 수 있음. 잘못된 데이터가 자동 반영되면 발주·마감 전체에 영향을 미침.
+
+**결정**: OCR 결과는 반드시 **사용자가 검수 화면에서 직접 확인 후 확정**. 자동 확정 로직은 구현하지 않음.
+
+</details>
+
+<details>
+<summary><b>6. JWT 저장 위치: localStorage vs httpOnly 쿠키</b></summary>
+<br/>
+
+|             | localStorage | httpOnly 쿠키              |
+| ----------- | ------------ | -------------------------- |
+| XSS 취약성  | 취약         | 안전                       |
+| 구현 복잡도 | 낮음         | 높음 (CORS, SameSite 설정) |
+| 현재 단계   | 적용 중      | 마이그레이션 예정          |
+
+**결정**: 개발 속도를 위해 현재는 **localStorage 사용**, 코드에 `// TODO: httpOnly 쿠키로 마이그레이션` 주석 명시. 프로덕션 보안 강화 시 마이그레이션 예정.
+
+</details>
+
+<details>
+<summary><b>7. businessDate 개념 설계</b></summary>
+<br/>
+
+**상황**: 심야 영업 카페의 경우 자정이 넘어도 마감 전까지는 같은 영업일로 처리해야 함
+
+단순 `new Date()`로 날짜를 판단하면 자정 이후 주문이 다음 날로 분류되어 마감 데이터 불일치 발생.
+
+**결정**: 가게 개점(`POST /open`) 시 `businessDate`를 별도로 기록하고, 마감 전까지의 모든 주문을 해당 `businessDate`에 귀속. KST 타임존 유틸리티(`kst.ts`) 별도 구현.
+
+</details>
+
+<details>
+<summary><b>8. 재고 차감 시점: 주문 수락 시 vs 마감 확정 시</b></summary>
+<br/>
+
+**고민**: 재고를 언제 차감할 것인가. 주문이 들어오는 순간 즉시 차감하면 재고 현황이 실시간으로 반영되지만, 취소된 주문까지 차감되는 문제가 생김. 반대로 마감 때만 차감하면 영업 중 재고 현황이 부정확함.
+
+| 방식              | 장점                 | 단점                     |
+| ----------------- | -------------------- | ------------------------ |
+| 주문 즉시 차감    | 실시간 재고 반영     | 취소 주문 복원 로직 복잡 |
+| 마감 시 일괄 차감 | 확정된 데이터만 반영 | 영업 중 재고 현황 부정확 |
+
+**결정**: 두 방식을 결합한 **하이브리드 방식** 채택
+
+- **주문 수락(`preparing`) 시점**: `adjustStockForOrder()`로 레시피 기반 재고 **즉시 차감** → 영업 중 실시간 재고 현황 반영
+- **취소 시**: 차감분 즉시 복원 (`sign = -1`) → `cancelled` 주문은 자동으로 재고에서 제외
+- **마감 시**: `orderDeductedAmount`(preparing+completed 레시피 합산)와 사장님이 직접 확인한 `remainingStock`의 차이를 `adjustmentAmount`(보정값)로 적용 → 이론과 실제 사용량의 괴리를 명시적으로 기록
+
+</details>
+
+<details>
+<summary><b>9. 이론 사용량 vs 실제 사용량 괴리 처리</b></summary>
+<br/>
+
+**고민**: 레시피에 등록된 이론 사용량(예: 라떼 1잔 = 우유 200ml)과 실제 사용량은 항상 다름. 시식, 음식 낭비, 레시피 오차, 직원 실수 등이 발생하면 레시피 계산만으로 정확한 재고 파악이 불가능함.
+
+**결정**: 마감 시 두 단계로 처리
+
+```
+orderDeductedAmount  = 주문 수락분 기반 레시피 이론 차감량 (시스템 계산)
+remainingStock       = 사장님이 직접 확인해 입력한 실제 잔여 재고
+─────────────────────────────────────────────────────────────
+actualUsage          = openingStock - remainingStock (실제 총 사용량)
+adjustmentAmount     = actualUsage - orderDeductedAmount (보정값 = 이론과 실제의 차이)
+```
+
+시스템이 계산한 이론값과 사장님이 직접 확인한 실측값의 차이를 `adjustmentAmount`로 명시적으로 기록. 마감 취소 시에는 이 **보정값(adjustmentAmount)만 복원**하고, 주문 기반 차감분은 유지하여 데이터 정합성 보장.
+
+</details>
+
+<details>
+<summary><b>10. 재고 단위 3종 고정 (g / ml / 개)</b></summary>
+<br/>
+
+**고민**: 식자재 단위를 자유 입력으로 할지, 고정 단위로 제한할지
+
+자유 입력을 허용하면 `500g`, `0.5kg`, `반 봉지` 등 단위가 혼재되어 재고 비교·계산이 불가능해짐. 특히 OCR 파싱 결과와 레시피 단위를 맞춰야 하는 구조에서는 표준화가 필수.
+
+**결정**: 모든 재고는 `g`, `ml`, `개` 3종으로만 저장. 외부에서 들어오는 `kg → g(×1000)`, `L → ml(×1000)` 변환은 프론트엔드에서 처리 후 서버에 표준 단위로 전송. 단위 고정으로 레시피 계산, 마감 차감, 안전재고 비교가 모두 단일 기준에서 동작.
+
+</details>
+
+<details>
+<summary><b>11. 포장단위·입고단위·사용단위 불일치 해결</b></summary>
+<br/>
+
+**고민**: 공급사는 `BOX`·`BTL`·`봉` 단위로 납품하고, 레시피는 `g`·`ml` 단위를 쓰며, 사장님이 발주할 때는 다시 `BOX` 단위로 주문함. 세 단위가 모두 달라 단순 숫자 비교가 불가능.
+
+**결정**: 3단계 변환 체계 설계
+
+```
+입고 단위 (BOX, BTL...)
+    ↓ conversionFactor (사용자 입력 또는 spec 자동 파싱)
+재고 단위 (g, ml, 개)  ← DB 저장 기준, 레시피·마감 계산에 사용
+    ↓ purchaseConversions (저장된 변환 계수 역산)
+발주 단위 (BOX, BTL...)  ← 발주 가이드에서 사장님이 실제 주문할 수량
+```
+
+한 번 입력한 변환 계수는 `ingredientUnitConversions` 테이블에 저장되어, **같은 식자재가 같은 단위로 재입고될 때 자동 적용**. 발주 가이드에서는 `recommendedOrderAmount`(g/ml 기준)를 저장된 변환 계수로 역산해 실제 주문 수량(BOX 단위)을 함께 표시.
+
+</details>
+
+<details>
+<summary><b>12. 다양한 명세서 포맷 수용 전략</b></summary>
+<br/>
+
+**고민**: 공급사마다 거래명세서 양식이 다름. 품목명·수량·단가·단위 열의 위치가 다르고, 같은 정보가 `"3통"`, `"3 BOX"`, 또는 품목명 뒤 괄호 `"(1L×12)"` 등 다양한 방식으로 표기됨.
+
+**결정**: 규칙 기반 파서 대신 **LLM 파싱 채택**
+
+- Naver CLOVA OCR로 텍스트 추출 → Google Gemini 2.5 Flash로 구조화 파싱
+- 단, AI 출력의 일관성을 위해 상세 규칙을 프롬프트에 명문화 (`temperature=0`):
+  - 단위 추출 우선순위 (별도 열 > 품목명 내 괄호 > 없으면 EA)
+  - 포장 단위(BOX, BTL…) vs 자동 변환 단위(KG, L…) 판별 규칙
+  - `spec` 필드로 내용물 정보 분리 (`"박스/20개"` → `spec: "20개"`)
+  - 식자재 목록은 ID 매핑 참고용으로만 제공, 이름 교정에 사용 금지
+- 거래명세서가 아닌 이미지는 `isInvoice: false`로 즉시 거부 (422 반환)
+
+</details>
+
+<details>
+<summary><b>13. 발주 가이드 생성 시점 및 트리거 기준</b></summary>
+<br/>
+
+**고민**: 발주 가이드를 언제 생성할 것인가. 마감 직후 자동 생성하면 편리하지만, 사장님이 원하는 시점에 최신 데이터로 다시 생성하고 싶을 수도 있음. 발주 필요 기준도 단순 안전재고 미달만으로는 부족함.
+
+**결정**: 온디맨드(on-demand) 생성으로 설계. 사장님이 원하는 시점에 생성 요청하면 그 시점의 최신 재고·소비 데이터로 분석.
+
+발주 필요 식자재 필터링 기준을 **6가지 트리거**로 세분화:
+
+| 트리거               | 기준                                                            |
+| -------------------- | --------------------------------------------------------------- |
+| 안전재고 미달        | `currentStock < safetyStock`                                    |
+| 유통기한 임박        | 최근 입고분 유통기한 5일 이내                                   |
+| 소진 3일 이내        | 14일 평균 소비 기준 3일 안에 소진 예상                          |
+| **선제 발주**        | 현재는 안전 수준이나 7일 내 안전재고 미달 예상                  |
+| **소비 가속**        | 최근 3일 평균이 14일 평균 대비 50% 이상 급증 + 7일 내 소진 예상 |
+| **재발주 주기 초과** | 마지막 입고 후 경과일이 평균 입고 주기의 1.2배 초과             |
+
+</details>
+
+<details>
+<summary><b>14. 발주 AI 프롬프트 설계 — 컨텍스트와 폴백</b></summary>
+<br/>
+
+**고민**: AI에게 어떤 데이터를 넘길 것인가. 숫자만 주면 현황 설명은 가능하지만 요일·계절 패턴 반영이 안 됨. 너무 많은 데이터를 주면 프롬프트가 비대해지고 응답 품질이 떨어짐.
+
+**결정**: 식자재별 컨텍스트 블록 + 매장 전체 패턴 데이터를 구조화해 전달
+
+```
+식자재 컨텍스트:
+  - 발주 트리거 (왜 이 식자재가 선택됐는지 명시)
+  - 14일 일평균 소비량 + 최근 3일 일평균 (소비 추세 비교)
+  - 예상 소진일 (두 기준 각각)
+  - 유통기한, 마지막 입고일 + 평균 입고 주기
+  - 연관 메뉴명 (레시피 기반)
+
+매장 전체 컨텍스트:
+  - 최근 7일 일평균 매출
+  - 요일별 평균 매출 패턴 (최근 8주)
+  - 내일 요일의 평균 대비 매출 예측 비율
+```
+
+추천량 계산식: `max(14일 평균, 최근 3일 평균) × 7일치`, 내일이 성수기 요일이면 +20% 버퍼 추가.
+
+AI 응답 파싱 실패 또는 503 에러 시 **룰 기반 폴백 자동 실행** — 서비스 가용성 보장.
 
 </details>
 
