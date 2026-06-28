@@ -16,7 +16,7 @@
 
 <br/>
 
-## 👥 BARO 팀원 소개
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20팀원%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 <table width="100%">
   <tbody>
@@ -31,7 +31,7 @@
 
 <br/>
 
-## 🏗️ 시스템 아키텍쳐
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=시스템%20아키텍쳐&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 ### 전체 구성도
 
@@ -202,7 +202,7 @@ sequenceDiagram
 <br/>
 <br/>
 
-## 📖 BARO 온보딩 가이드
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20온보딩%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 <details>
 <summary><b>작업 시작 전 필수 규칙</b></summary>
@@ -350,7 +350,7 @@ develop ──→ release/vX.Y.Z ──→ main
 
 <br/>
 
-## 💬 지원 창구
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=지원%20창구&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 - [💬 BARO 버그 제보](https://github.com/orgs/from-knu-import-potato/discussions/190)
 - [💭 BARO 기능 제안](https://github.com/orgs/from-knu-import-potato/discussions/248)
