@@ -375,7 +375,7 @@ develop ──→ release/vX.Y.Z ──→ main
 | :-----------------------------------------------------------------: | :-------------------------------------------------------------: |
 |                          **General Logo**                           |                          **App Icon**                           |
 
-| <img width="60%" alt="simple logo" src="./assets/baro-simple-logo.png" /> | <img width="40%" alt="full logo" src="./assets/baro-full-logo.png" /> |
+| <img width="55%" alt="simple logo" src="./assets/baro-simple-logo.png" /> | <img width="45%" alt="full logo" src="./assets/baro-full-logo.png" /> |
 | :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: |
 |                              **Simple Logo**                              |                             **Full Logo**                             |
 
