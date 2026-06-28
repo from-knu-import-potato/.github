@@ -49,7 +49,7 @@
 | ------------------ | ----------------------------------------------------------- |
 | 프론트엔드         | https://baro-web.vercel.app                                 |
 | 백엔드 API         | https://baro-backend-production-c908.up.railway.app/v1/     |
-| API 문서 (Swagger) | https://baro-backend-production-c908.up.railway.app/v1//doc |
+| API 문서 (Swagger) | https://baro-backend-production-c908.up.railway.app/doc |
 
 <br/>
 <br/>
