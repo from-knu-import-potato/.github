@@ -216,6 +216,12 @@ sequenceDiagram
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20온보딩%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
+<img src="./assets/team-collaboration-strategy.png" width="100%" />
+
+<br/>
+
+### 개발 관련 가이드
+
 <details>
 <summary><b>작업 시작 전 필수 규칙</b></summary>
 <br/>
