@@ -1,3 +1,10 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile/assets/baro-banner-black.png">
+  <img alt="Baro Banner" src="./profile/assets/baro-banner-white.png">
+</picture>
+
+<br/>
+
 ## BARO 팀원 소개
 
 <table width="120%">
@@ -10,3 +17,12 @@
     </tr>
   </tbody>
 </table>
+
+<br/>
+
+## 서비스 아키텍쳐
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile/assets/baro-banner-black.png">
+  <img alt="Baro Service Architecture" src="./profile/assets/baro-service-architecture.png">
+</picture>
