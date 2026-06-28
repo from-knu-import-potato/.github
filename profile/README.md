@@ -367,6 +367,39 @@ develop ──→ release/vX.Y.Z ──→ main
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=디자인%20시스템&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+### 로고 (Logo)
+
+| <img width="50%" alt="general logo" src="./assets/baro-logo.png" /> | <img width="50%" alt="app icon" src="./assets/baro-icon.png" /> |
+| :-----------------------------------------------------------------: | :-------------------------------------------------------------: |
+|                          **General Logo**                           |                          **App Icon**                           |
+
+| <img width="50%" alt="simple logo" src="./assets/baro-simple-logo.png" /> | <img width="50%" alt="full logo" src="./assets/baro-full-logo.png" /> |
+| :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: |
+|                              **Simple Logo**                              |                             **Full Logo**                             |
+
+| <img width="50%" alt="kr text" src="./assets/baro-kr-text.png" /> | <img width="50%" alt="en text" src="./assets/baro-en-text.png" /> |
+| :---------------------------------------------------------------: | :---------------------------------------------------------------: |
+|                            **KR Text**                            |                            **EN Text**                            |
+
+| <img width="100%" alt="logo concept" src="./assets/baro-logo-concept.png" /> |
+| :--------------------------------------------------------------------------: |
+|                               **Logo Concept**                               |
+
+<br/>
+
+### 디자인 토큰
+
+<img width="100%" alt="" src="./assets/baro-design-token.png" />
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=지원%20창구&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 - [💬 BARO 버그 제보](https://github.com/orgs/from-knu-import-potato/discussions/190)
