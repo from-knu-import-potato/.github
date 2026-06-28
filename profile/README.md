@@ -86,6 +86,189 @@
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=설치%20및%20실행&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>사전 요구사항</b></summary>
+<br/>
+
+- Node.js >= 22
+- pnpm >= 10
+- PostgreSQL (또는 Supabase 프로젝트)
+
+<br/>
+</details>
+
+<details>
+<summary><b>프론트엔드</b></summary>
+<br/>
+
+```bash
+git clone https://github.com/from-knu-import-potato/baro-frontend.git
+cd baro-frontend
+pnpm install
+cp .env.example .env.local
+# .env.local 환경 변수 설정 후 실행
+pnpm dev
+# http://localhost:5173
+```
+
+| 명령어          | 설명                             |
+| --------------- | -------------------------------- |
+| `pnpm dev`      | 개발 서버 실행 (Vite HMR)        |
+| `pnpm build`    | TypeScript 검사 + 프로덕션 빌드  |
+| `pnpm lint`     | ESLint 검사                      |
+| `pnpm lint:fix` | ESLint 자동 수정 + Prettier 포맷 |
+| `pnpm preview`  | 빌드 결과 미리보기               |
+
+<br/>
+</details>
+
+<details>
+<summary><b>백엔드</b></summary>
+<br/>
+
+```bash
+git clone https://github.com/from-knu-import-potato/baro-backend.git
+cd baro-backend
+pnpm install
+cp .env.example .env
+# .env 환경 변수 설정 후 실행
+pnpm db:migrate     # DB 마이그레이션 실행
+pnpm dev
+# http://localhost:3000
+# Swagger UI: http://localhost:3000/doc
+```
+
+| 명령어             | 설명                                   |
+| ------------------ | -------------------------------------- |
+| `pnpm dev`         | 개발 서버 실행                         |
+| `pnpm build`       | 프로덕션 빌드 (`dist/`)                |
+| `pnpm db:generate` | 스키마 변경으로 마이그레이션 파일 생성 |
+| `pnpm db:migrate`  | 마이그레이션 실행                      |
+| `pnpm db:push`     | 스키마를 DB에 직접 반영                |
+| `pnpm db:studio`   | Drizzle Studio (DB 웹 UI) 실행         |
+
+<br/>
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=환경%20변수&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>프론트엔드 (.env.local)</b></summary>
+<br/>
+
+```env
+VITE_API_BASE_URL=http://localhost:3000/v1
+```
+
+<br/>
+</details>
+
+<details>
+<summary><b>백엔드 (.env)</b></summary>
+<br/>
+
+```env
+# 데이터베이스
+DATABASE_URL=postgresql://user:password@db.supabase.co:5432/postgres
+
+# JWT 시크릿
+JWT_SECRET=your-access-token-secret
+JWT_REFRESH_SECRET=your-refresh-token-secret
+
+# Kakao OAuth
+KAKAO_CLIENT_ID=your-kakao-app-key
+KAKAO_CLIENT_SECRET=your-kakao-client-secret
+KAKAO_REDIRECT_URI=http://localhost:3000/v1/auth/kakao/callback
+
+# AI / OCR
+GEMINI_API_KEY=your-google-gemini-api-key
+CLOVA_OCR_API_URL=https://your-clova-ocr-endpoint
+CLOVA_OCR_SECRET_KEY=your-clova-secret-key
+
+# Supabase
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_KEY=your-supabase-service-role-key
+
+# 기타
+FRONTEND_URL=http://localhost:5173
+REGISTER_CODE=your-invite-code-for-local-testing
+PORT=3000
+```
+
+> 각 키 발급처: [Kakao Developers](https://developers.kakao.com) · [Google AI Studio](https://aistudio.google.com) · [Naver CLOVA](https://clova.ai/ocr) · [Supabase](https://supabase.com)
+
+<br/>
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=API%20문서&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니다.
+
+| 환경     | URL                                                     |
+| -------- | ------------------------------------------------------- |
+| 로컬     | http://localhost:3000/doc                               |
+| 프로덕션 | https://baro-backend-production-c908.up.railway.app/doc |
+
+<details>
+<summary><b>엔드포인트 목록</b></summary>
+<br/>
+
+| 도메인          | 메서드 | 경로                                 | 설명                          | 인증 |
+| --------------- | ------ | ------------------------------------ | ----------------------------- | ---- |
+| **Auth**        | GET    | `/auth/kakao`                        | 카카오 OAuth 로그인           | ❌   |
+|                 | POST   | `/auth/refresh`                      | 토큰 갱신                     | ❌   |
+|                 | POST   | `/auth/logout`                       | 로그아웃                      | ✅   |
+| **Users**       | GET    | `/users/me`                          | 내 정보 조회                  | ✅   |
+|                 | GET    | `/users/me/stores`                   | 내 가게 목록                  | ✅   |
+| **Stores**      | POST   | `/stores/setup`                      | 가게 초기 세팅                | ✅   |
+|                 | GET    | `/stores/:id`                        | 가게 정보 조회                | ✅   |
+|                 | PATCH  | `/stores/:id`                        | 가게 정보 수정                | ✅   |
+|                 | POST   | `/stores/:id/invite-code`            | 초대 코드 재발급              | ✅   |
+|                 | DELETE | `/stores/:id`                        | 가게 삭제                     | ✅   |
+| **Orders**      | POST   | `/stores/:id/orders`                 | 주문 생성 (손님, 인증 불필요) | ❌   |
+|                 | GET    | `/stores/:id/orders`                 | 주문 목록 조회                | ✅   |
+|                 | PATCH  | `/stores/:id/orders/:orderId/status` | 주문 상태 변경                | ✅   |
+|                 | GET    | `/stores/:id/orders/stream`          | SSE 실시간 스트림             | ✅   |
+| **Menus**       | GET    | `/stores/:id/menus`                  | 메뉴 목록                     | ✅   |
+|                 | POST   | `/stores/:id/menus`                  | 메뉴 생성                     | ✅   |
+|                 | POST   | `/stores/:id/menus/ocr-scan`         | AI 메뉴 스캔                  | ✅   |
+| **Ingredients** | GET    | `/stores/:id/ingredients`            | 재고 목록                     | ✅   |
+|                 | POST   | `/stores/:id/ingredients/inbound`    | 입고 등록                     | ✅   |
+| **Closing**     | GET    | `/stores/:id/closing/preview`        | 마감 미리보기                 | ✅   |
+|                 | POST   | `/stores/:id/closing`                | 마감 확정                     | ✅   |
+|                 | DELETE | `/stores/:id/closing/:closingId`     | 마감 취소                     | ✅   |
+| **OCR**         | POST   | `/stores/:id/ocr/upload`             | 거래명세서 OCR 처리           | ✅   |
+| **Order Guide** | GET    | `/stores/:id/order-guide`            | 발주 가이드 조회              | ✅   |
+|                 | POST   | `/stores/:id/order-guide/generate`   | 발주 가이드 생성              | ✅   |
+| **Dashboard**   | GET    | `/stores/:id/dashboard/stats`        | 대시보드 통계                 | ✅   |
+|                 | GET    | `/stores/:id/dashboard/sales`        | 12개월 매출                   | ✅   |
+
+<br/>
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=테스트%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 - 테스트 가이드에 대한 문서는 추가 예정입니다.
@@ -104,11 +287,11 @@ PW: [테스트 계정 PW]
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=프로젝트%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-**BARO(바로)** 는 강원도 소규모 카페·식당 사장님을 위한 OCR·AI 기반 올인원 가게 운영 SaaS입니다.
+**BARO(바로)** 는 강원도 소규모 카페·식당 사장님을 위한 **OCR·AI 기반 올인원 가게 운영 SaaS**입니다.
 
 거래명세서를 카메라로 찍으면 AI가 자동으로 재고를 입고하고, 누적된 소비 데이터를 분석해 적정 발주량을 추천합니다. 손님은 QR 코드로 직접 주문하고, 사장님은 하루 영업이 끝나면 한 번의 마감으로 재고를 자동 정산합니다.
 
-주문 · 재고 · 발주 · 마감 — 혼자서 모든 걸 처리해야 하는 소상공인의 하루를 BARO 하나로 끝냅니다.
+**주문 · 재고 · 발주 · 마감** — 혼자서 모든 걸 처리해야 하는 소상공인의 하루를 BARO 하나로 끝냅니다.
 
 <br/>
 
@@ -220,6 +403,96 @@ PW: [테스트 계정 PW]
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=사용%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>역할별 권한</b></summary>
+<br/>
+
+| 기능               | Owner | Staff | Guest |
+| ------------------ | :---: | :---: | :---: |
+| 대시보드 조회      |  ✅   |  ✅   |  ❌   |
+| 실시간 주문 수신   |  ✅   |  ✅   |  ❌   |
+| 주문 상태 변경     |  ✅   |  ✅   |  ❌   |
+| 재고 조회·관리     |  ✅   |  ✅   |  ❌   |
+| OCR 입고 처리      |  ✅   |  ✅   |  ❌   |
+| 마감하기           |  ✅   |  ✅   |  ❌   |
+| 메뉴·레시피 설정   |  ✅   |  ❌   |  ❌   |
+| 멤버 관리          |  ✅   |  ❌   |  ❌   |
+| 가게 설정·삭제     |  ✅   |  ❌   |  ❌   |
+| QR 주문 (비로그인) |  ❌   |  ❌   |  ✅   |
+
+<br/>
+</details>
+
+<details>
+<summary><b>최초 가입 & 가게 세팅</b></summary>
+<br/>
+
+```
+카카오 로그인
+→ 초기 세팅 위저드 진입
+→ 가게 기본 정보 입력 (이름, 업종, 카테고리)
+→ 영업 시간 설정
+→ 메뉴 등록 (이미지 업로드 또는 AI 스캔)
+→ 식자재 등록 (이름, 단위, 초기 재고)
+→ 레시피 설정 (메뉴 ↔ 식자재 매핑)
+→ 안전재고 비율 설정 → 완료
+```
+
+<br/>
+</details>
+
+<details>
+<summary><b>하루 영업 사이클</b></summary>
+<br/>
+
+```
+개점하기 (영업일 시작)
+→ 대시보드에서 실시간 주문 수신
+→ 주문 확인 후 상태 변경 (대기 → 준비 중 → 완료)
+→ 마감하기 (판매 메뉴 확인 → 재고 차감 미리보기 → 잔여재고 입력 → 확정)
+→ AI 발주 가이드 확인 (재고 부족 품목 추천)
+```
+
+<br/>
+</details>
+
+<details>
+<summary><b>OCR 입고 처리</b></summary>
+<br/>
+
+```
+OCR 입고 페이지 → 거래명세서 촬영·업로드
+→ CLOVA OCR + Gemini AI 자동 파싱
+→ 검수 화면에서 품목·수량·단가 확인 및 수정
+→ 기존 식자재와 매핑 → 입고 확정
+→ 재고 자동 업데이트
+```
+
+<br/>
+</details>
+
+<details>
+<summary><b>손님 QR 주문</b></summary>
+<br/>
+
+```
+테이블 QR 코드 스캔 → 메뉴판 페이지 접속 (로그인 불필요)
+→ 메뉴 선택 → 수량 조절 → 주문하기
+→ 사장님 화면에 실시간으로 주문 수신
+```
+
+<br/>
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=시스템%20아키텍쳐&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 <picture>
@@ -251,7 +524,7 @@ sequenceDiagram
 
     Note over O,B: 주문 상태 변경(수락·취소·완료) 시
     O->>B: PATCH /orders/:id/status
-    B->>B: adjustStockForOrder() — preparing 시 레시피 기반 즉시 재고 차감
+    B->>B: adjustStockForOrder() — preparing 전환 시 레시피 기반 즉시 재고 차감
     B-->>O: SSE event: order-status-changed
     O->>O: queryClient.invalidateQueries(['orders']) → UI 업데이트
 ```
@@ -441,6 +714,92 @@ sequenceDiagram
 | **Vercel**            | 프론트엔드 배포    | React SPA 최적 CDN 배포, GitHub 연동 자동 배포                    |
 | **Railway**           | 백엔드 배포        | Node.js 서버 간단 배포, Nixpacks 빌드 자동화, 환경 변수 관리 편의 |
 
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=폴더%20구조&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>프론트엔드 (baro-frontend/)</b></summary>
+<br/>
+
+```
+src/
+├─ app/                   # 레이아웃, 라우팅, AppInitializer
+├─ features/              # 도메인별 기능 모듈
+│  ├─ auth/               # 로그인, 카카오 OAuth, JWT
+│  │  ├─ api/
+│  │  ├─ components/
+│  │  ├─ hooks/
+│  │  ├─ store/           # Zustand 인증 스토어
+│  │  └─ types/
+│  ├─ dashboard/          # 대시보드, SSE 실시간 주문
+│  ├─ customer-order/     # 손님 주문 (QR)
+│  ├─ inventory/          # 재고 현황
+│  ├─ ocr-inbound/        # OCR 입고 처리
+│  ├─ order-guide/        # AI 발주 가이드
+│  ├─ closing/            # 마감하기
+│  ├─ store-settings/     # 가게 설정 (메뉴·레시피·테이블·테마)
+│  ├─ initial-setup/      # 초기 세팅 위저드
+│  ├─ notification/       # 알림
+│  └─ landing/            # 랜딩 페이지
+├─ pages/                 # 라우팅 페이지 (features 조합만)
+├─ widgets/               # 2개 이상 페이지 공용 UI
+├─ shadcn/                # Shadcn 컴포넌트 (수정 금지)
+└─ shared/
+   ├─ api/                # Axios 인스턴스, 인터셉터
+   ├─ components/         # 공용 UI 컴포넌트
+   ├─ hooks/              # 공용 훅
+   ├─ store/              # 전역 Zustand 스토어
+   ├─ utils/              # businessDate, apiError 등
+   ├─ constants/
+   ├─ types/
+   └─ design-token/       # colors.css, spacing.css, typography.css
+```
+
+<br/>
+</details>
+
+<details>
+<summary><b>백엔드 (baro-backend/)</b></summary>
+<br/>
+
+```
+src/
+├─ index.ts               # 진입점, 라우터 등록, OpenAPI 설정, CORS
+├─ routes/                # 도메인별 라우터
+│  ├─ auth.ts             # OAuth, JWT 로그인·갱신·로그아웃
+│  ├─ stores.ts           # 가게 CRUD, 멤버, 초대 코드
+│  ├─ menus.ts            # 메뉴 CRUD, 이미지 업로드, AI 스캔
+│  ├─ menu-categories.ts  # 메뉴 카테고리 관리
+│  ├─ ingredients.ts      # 재고·입고 기록
+│  ├─ recipes.ts          # 레시피 (메뉴-재료 매핑)
+│  ├─ orders.ts           # 주문 CRUD, SSE 스트림
+│  ├─ ocr.ts              # 거래명세서 OCR 처리
+│  ├─ order-guide.ts      # AI 발주 가이드 생성
+│  ├─ closing.ts          # 마감 (미리보기·확정·취소)
+│  ├─ dashboard.ts        # 통계·매출 데이터
+│  ├─ theme.ts            # 가게 테마 설정
+│  └─ open.ts             # 영업 개점·상태 확인
+├─ middleware/
+│  └─ auth.ts             # JWT 검증 미들웨어
+├─ db/
+│  ├─ schema.ts           # Drizzle 테이블 정의 (18개 테이블)
+│  └─ index.ts            # DB 클라이언트 초기화
+└─ lib/
+   ├─ jwt.ts              # 토큰 생성·검증
+   ├─ sse.ts              # SSE 클라이언트 관리·브로드캐스트
+   ├─ supabase.ts         # Supabase 클라이언트
+   └─ kst.ts              # KST 타임존 유틸리티
+```
+
+<br/>
 </details>
 
 <br/>
@@ -704,6 +1063,90 @@ AI 응답 파싱 실패 또는 503 에러 시 **룰 기반 폴백 자동 실행*
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=직면했던%20문제점%20/%20해결%20과정&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+<details>
+<summary><b>1. SSE 연결 시 인증 헤더 전달 불가</b></summary>
+<br/>
+
+**문제**: 브라우저 내장 `EventSource`는 `Authorization` 헤더를 설정할 수 없어 인증된 SSE 연결이 불가능했음
+
+**해결**: `fetch()` API와 `ReadableStream`을 활용해 커스텀 SSE 파서를 직접 구현. `event:` 와 `data:` 라인을 수동으로 파싱하여 이벤트를 처리하고, 연결 끊김 시 3초 후 자동 재연결 로직을 추가.
+
+```ts
+const response = await fetch(url, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+// ReadableStream으로 청크 단위 처리, event:/data: 라인 직접 파싱
+```
+
+</details>
+
+<details>
+<summary><b>2. OCR 비표준 단위 처리</b></summary>
+<br/>
+
+**문제**: 공급사마다 `BOX`, `BTL`, `봉`, `팩` 등 포장 단위를 사용해 내용물 기준 단위(`g`/`ml`/`개`)로 자동 변환이 불가능한 경우가 많았음
+
+**해결**: 3단계 처리 전략 도입
+
+1. **Gemini가 `spec` 필드로 내용물 정보 추출** — 예) `"박스/20개"` → `spec: "20개"`
+2. **프론트엔드 `parseSpec()`으로 자동 변환 시도** — `spec` 문자열에서 숫자+단위 파싱, `L→ml(×1000)`, `kg→g(×1000)` 자동 변환
+3. **변환 불가 시 `amount=null`로 처리** → 검수 화면에서 사용자가 변환 계수 직접 입력. 입력한 계수는 `ingredientUnitConversions` 테이블에 저장되어 동일 식자재·단위 재입고 시 자동 적용
+
+</details>
+
+<details>
+<summary><b>3. businessDate 자정 경계 문제</b></summary>
+<br/>
+
+**문제**: 심야 영업 시 자정 이후 주문이 다음 날짜로 분류되어 마감 데이터 불일치 발생
+
+**해결**: 가게 개점(`POST /open`) 시 `businessDate`를 별도 컬럼으로 기록하고, 마감 전까지의 모든 트랜잭션을 해당 날짜에 귀속. KST 기준 날짜 계산 유틸리티(`kst.ts`)를 분리하여 일관된 시간대 처리.
+
+</details>
+
+<details>
+<summary><b>4. SSE 이벤트 수신 후 React Query 캐시 무효화 타이밍</b></summary>
+<br/>
+
+**문제**: SSE로 새 주문 이벤트를 수신해도 화면의 주문 목록이 즉시 업데이트되지 않는 경우 발생
+
+**해결**: SSE 이벤트 핸들러 내에서 `queryClient.invalidateQueries(['orders', storeId])`를 즉시 호출하도록 수정. 이벤트 수신과 캐시 무효화 사이의 비동기 타이밍 이슈를 해결하고, 새 주문 페이로드에 포함된 `stockWarnings`를 Zustand 스토어에 즉시 반영하도록 분리.
+
+</details>
+
+<details>
+<summary><b>5. 마감 재고 차감 정합성 & 취소 복원 범위</b></summary>
+<br/>
+
+**문제**: 마감 확정 시 재고 차감 로직이 복잡했음
+
+- 주문이 `preparing` 상태가 될 때 이미 실시간으로 재고가 차감됨
+- 사용자가 실제로 확인한 잔여 재고와 시스템 계산값이 다를 수 있음
+- 마감 취소 시 어디까지 복원해야 하는지 기준이 불명확했음
+
+**해결**: 3단계 수치 설계로 해결
+
+```
+orderDeductedAmount  = preparing + completed 주문 기반 레시피 이론 차감량 (시스템 계산)
+remainingStock       = 사장님이 직접 확인해 입력한 실제 잔여 재고
+─────────────────────────────────────────────────────────────────────
+actualUsage          = openingStock - remainingStock (실제 총 사용량)
+adjustmentAmount     = actualUsage - orderDeductedAmount (보정값 = 이론과 실제의 차이)
+```
+
+마감 취소 시에는 `adjustmentAmount`(보정값)만 복원하고, 주문 기반 차감분은 유지. `GET /closing/preview` 전용 엔드포인트로 미리보기와 확정을 명확히 분리.
+
+</details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=BARO%20온보딩%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 <img src="./assets/team-collaboration-strategy.png" width="100%" />
@@ -767,7 +1210,7 @@ release/v0.2.0                 # 릴리즈 브랜치
 <summary><b>이슈 생성</b></summary>
 <br/>
 
-- 이슈 생성 시 `.github/ISSUE_TEMPLATE/` 내 템플릿을 **반드시** 사용한다.
+이슈 생성 시 `.github/ISSUE_TEMPLATE/` 내 템플릿을 **반드시** 사용한다.
 
 | 템플릿 파일   | gitmoji | 용도                              |
 | ------------- | ------- | --------------------------------- |
@@ -896,9 +1339,74 @@ develop ──→ release/vX.Y.Z ──→ main
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=자주%20묻는%20질문&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+| 문제 상황                  | 원인                              | 해결 방법                                     |
+| -------------------------- | --------------------------------- | --------------------------------------------- |
+| 로그인 후 화면이 안 넘어감 | 카카오 OAuth 콜백 처리 지연       | 브라우저 새로고침 후 `/dashboard`로 직접 이동 |
+| OCR 인식 결과가 엉뚱함     | 이미지 품질 불량 또는 비표준 서식 | 밝은 환경에서 재촬영, 검수 화면에서 수동 수정 |
+| 실시간 주문이 안 들어옴    | SSE 연결 끊김                     | 페이지 새로고침 (3초 후 자동 재연결)          |
+| 재고 기능이 비활성화됨     | 등록된 식자재 없음                | 가게 설정 → 식자재 먼저 등록                  |
+| 마감 후 재고 차감이 이상함 | 레시피 미설정 메뉴 존재           | 가게 설정 → 레시피 등록 후 재시도             |
+| 발주 가이드가 생성 안 됨   | 마감 데이터 없음                  | 하루 영업 후 마감 완료 필요                   |
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=알려진%20제한사항&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+- 이미지 업로드 최대 **10MB**
+- 식자재 단위는 `g`, `ml`, `개` **3종만 지원**
+- **OCR 결과 자동 확정 불가** — 반드시 수동 검수 단계를 거쳐야 함
+- **마감 재고 자동 차감 불가** — 사용자 검토·수정 후 최종 확정 필수
+- JWT 토큰 localStorage 저장 (XSS 취약점 존재, httpOnly 쿠키 마이그레이션 예정)
+- **카카오 소셜 로그인만 지원** (이메일·일반 회원가입 미지원)
+- 회원 탈퇴 시 가게 데이터(재고·메뉴·레시피 등) **초기화 선행 필수**
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=향후%20구현%20기능&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+- [ ] httpOnly 쿠키 기반 JWT 저장으로 보안 강화
+- [ ] 푸시 알림 (PWA / FCM) — 주문 수신 시 알림
+- [ ] 다크 모드 (토글 UI 존재, 기능 완성 예정)
+- [ ] 매출 분석 심화 — 카테고리별·시간대별·메뉴별 통계
+- [ ] 바코드 스캔 기반 입고 처리
+- [ ] 멀티 테이블 동시 주문 현황 뷰
+- [ ] 다국어 지원 (i18n)
+- [ ] 테스트 코드 작성 (Vitest)
+- [ ] 모바일 앱 (React Native)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=지원%20창구&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 - [💬 BARO 버그 제보](https://github.com/orgs/from-knu-import-potato/discussions/190)
 - [💭 BARO 기능 제안](https://github.com/orgs/from-knu-import-potato/discussions/248)
 - [🙋🏻 BARO 1:1 문의 폼](https://form.naver.com/response/lKA7-JRIWJWq_xDIwmtdHg)
 - [📧 BARO 문의 메일](dd22dd22.yy66yy66@gmail.com)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=라이선스&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+This project is licensed under the MIT License.
