@@ -43,6 +43,37 @@
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=배포%20환경&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+| 구분               | URL                                                         |
+| ------------------ | ----------------------------------------------------------- |
+| 프론트엔드         | https://baro-web.vercel.app                                 |
+| 백엔드 API         | https://baro-backend-production-c908.up.railway.app/v1/     |
+| API 문서 (Swagger) | https://baro-backend-production-c908.up.railway.app/v1//doc |
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=테스트%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+- 테스트 가이드에 대한 문서는 추가 예정입니다.
+
+```
+ID: [테스트 계정 ID]
+PW: [테스트 계정 PW]
+```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=프로젝트%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 **BARO(바로)** 는 강원도 소규모 카페·식당 사장님을 위한 OCR·AI 기반 올인원 가게 운영 SaaS입니다.
@@ -50,6 +81,8 @@
 거래명세서를 카메라로 찍으면 AI가 자동으로 재고를 입고하고, 누적된 소비 데이터를 분석해 적정 발주량을 추천합니다. 손님은 QR 코드로 직접 주문하고, 사장님은 하루 영업이 끝나면 한 번의 마감으로 재고를 자동 정산합니다.
 
 주문 · 재고 · 발주 · 마감 — 혼자서 모든 걸 처리해야 하는 소상공인의 하루를 BARO 하나로 끝냅니다.
+
+<br/>
 
 <details>
 <summary><b>배경 — 강원도 소상공인 문제</b></summary>
@@ -109,6 +142,26 @@
 | **손님 (Guest)**   | 비회원. 별도 로그인 없이 주문만 가능                    | 테이블 QR 스캔 → 주문 페이지 바로 접근 |
 
 </details>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=주요%20화면&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+| 화면                                                    | 설명                                                |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| ![랜딩](./docs/images/screenshot-landing.png)           | **랜딩 페이지** — 서비스 소개 및 로그인 진입        |
+| ![대시보드](./docs/images/screenshot-dashboard.png)     | **대시보드** — 실시간 주문 수신, 재고·매출 현황     |
+| ![QR주문](./docs/images/screenshot-order.png)           | **손님 주문 페이지** — QR 스캔 후 메뉴 선택·주문    |
+| ![OCR](./docs/images/screenshot-ocr.png)                | **OCR 입고 처리** — 거래명세서 촬영 → 자동 디지털화 |
+| ![발주가이드](./docs/images/screenshot-order-guide.png) | **AI 발주 가이드** — AI 기반 발주량 추천            |
+| ![마감](./docs/images/screenshot-closing.png)           | **마감하기** — 레시피 기반 재고 자동 차감           |
+| ![재고](./docs/images/screenshot-inventory.png)         | **재고 현황** — 전체 재고 상태 및 안전재고 경고     |
+| ![설정](./docs/images/screenshot-settings.png)          | **가게 설정** — 메뉴·레시피·테이블·테마 관리        |
 
 <br/>
 <br/>
