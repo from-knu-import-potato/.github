@@ -28,19 +28,19 @@
 <table border="0" width="100%">
   <tr>
     <td width="40"><kbd>B</kbd></td>
-    <td><b>Best Inventory</b> — 최적의 재고 상태 유지</td>
+    <td width="100%"><b>Best Inventory</b> — 최적의 재고 상태 유지</td>
   </tr>
   <tr>
-    <td><kbd>A</kbd></td>
-    <td><b>AI-Assistant</b> — AI를 통한</td>
+    <td width="40"><kbd>A</kbd></td>
+    <td width="100%"><b>AI-Assistant</b> — AI를 통한</td>
   </tr>
   <tr>
-    <td><kbd>R</kbd></td>
-    <td><b>Recommendation</b> — 맞춤형 발주 추천</td>
+    <td width="40"><kbd>R</kbd></td>
+    <td width="100%"><b>Recommendation</b> — 맞춤형 발주 추천</td>
   </tr>
   <tr>
-    <td><kbd>O</kbd></td>
-    <td><b>One-click Operation</b> — 주문부터 마감까지 모든 가게 운영을 한 번에</td>
+    <td width="40"><kbd>O</kbd></td>
+    <td width="100%"><b>One-click Operation</b> — 주문부터 마감까지 모든 가게 운영을 한 번에</td>
   </tr>
 </table>
 
