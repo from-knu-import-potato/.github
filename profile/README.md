@@ -7,10 +7,12 @@
 
 <table width="100%" border="0">
   <tr>
-    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=클릭해서%20바로%20이동&descAlignY=70&descSize=25&stroke=cacaca&reversal=false" width="100%" /></a></td>
-    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=클릭해서%20바로%20이동&descAlignY=70&descSize=25&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=%EC%8B%A4%EC%A0%9C%20%EC%9A%B4%EC%98%81%20%EC%A4%91%EC%9D%B8%20BARO%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=449CD4&textBg=false&animation=twinkling&desc=%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B2%80%EC%A6%9D%20%ED%99%98%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
   </tr>
 </table>
+
+<p align="center">👆 이미지를 클릭하면 해당 서비스로 이동합니다</p>
 
 <br/>
 
