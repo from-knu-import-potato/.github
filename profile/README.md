@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile/assets/baro-banner-black.png">
-  <img alt="Baro Banner" src="./profile/assets/baro-banner-white.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/baro-banner-black.png">
+  <img alt="Baro Banner" src="./assets/baro-banner-white.png">
 </picture>
 
 <br/>
@@ -23,6 +23,5 @@
 ## 서비스 아키텍쳐
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile/assets/baro-banner-black.png">
-  <img alt="Baro Service Architecture" src="./profile/assets/baro-service-architecture.png">
+  <img alt="Baro Service Architecture" src="./assets/baro-service-architecture.png">
 </picture>
