@@ -9,8 +9,8 @@
 
 <table width="100%" border="0">
   <tr>
-    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EC%8B%A4%EC%A0%9C%20%EC%9A%B4%EC%98%81%20%EC%A4%91%EC%9D%B8%20BARO%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
-    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B2%80%EC%A6%9D%20%ED%99%98%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href="https://baro-web.vercel.app/"><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EC%8B%A4%EC%A0%9C%20%EC%9A%B4%EC%98%81%20%EC%A4%91%EC%9D%B8%20BARO%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href="https://qa-baro-web.vercel.app/"><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B2%80%EC%A6%9D%20%ED%99%98%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
   </tr>
 </table>
 
@@ -25,24 +25,11 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=왜%20BARO%20인가요%3F&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-<table border="0" width="100%">
-  <tr>
-    <td width="40"><kbd>B</kbd></td>
-    <td width="100%"><b>Best Inventory</b> — 최적의 재고 상태 유지</td>
-  </tr>
-  <tr>
-    <td width="40"><kbd>A</kbd></td>
-    <td width="100%"><b>AI-Assistant</b> — AI를 통한</td>
-  </tr>
-  <tr>
-    <td width="40"><kbd>R</kbd></td>
-    <td width="100%"><b>Recommendation</b> — 맞춤형 발주 추천</td>
-  </tr>
-  <tr>
-    <td width="40"><kbd>O</kbd></td>
-    <td width="100%"><b>One-click Operation</b> — 주문부터 마감까지 모든 가게 운영을 한 번에</td>
-  </tr>
-</table>
+| 📦 **B**est Inventory | 🤖 **A**I-Assistant | 💡 **R**ecommendation | ✅ **O**ne-click Operation |
+| :-------------------: | :-----------------: | :-------------------: | :------------------------: |
+| 최적의 재고 상태 유지 |  AI 기반 소비 분석  |  맞춤형 발주량 추천   | 주문부터 마감까지 한 번에  |
+
+<p align="center"><b>B</b>est 재고 · <b>A</b>I 분석 · <b>R</b>ecommendation 발주 · <b>O</b>ne-click 마감 — 소상공인의 하루를 BARO 하나로 끝냅니다</p>
 
 <br/>
 <br/>
@@ -232,6 +219,9 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 | 도메인          | 메서드 | 경로                                 | 설명                          | 인증 |
 | --------------- | ------ | ------------------------------------ | ----------------------------- | ---- |
 | **Auth**        | GET    | `/auth/kakao`                        | 카카오 OAuth 로그인           | ❌   |
+|                 | GET    | `/auth/kakao/callback`               | 카카오 OAuth 콜백             | ❌   |
+|                 | POST   | `/auth/login`                        | 아이디/비밀번호 로그인        | ❌   |
+|                 | POST   | `/auth/register`                     | 회원가입 (초대 코드 필요)     | ❌   |
 |                 | POST   | `/auth/refresh`                      | 토큰 갱신                     | ❌   |
 |                 | POST   | `/auth/logout`                       | 로그아웃                      | ✅   |
 | **Users**       | GET    | `/users/me`                          | 내 정보 조회                  | ✅   |
@@ -251,6 +241,8 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 | **Ingredients** | GET    | `/stores/:id/ingredients`            | 재고 목록                     | ✅   |
 |                 | POST   | `/stores/:id/ingredients/inbound`    | 입고 등록                     | ✅   |
 | **Closing**     | GET    | `/stores/:id/closing/preview`        | 마감 미리보기                 | ✅   |
+|                 | GET    | `/stores/:id/closing`                | 마감 이력 조회                | ✅   |
+|                 | GET    | `/stores/:id/closing/:closingId`     | 마감 상세 조회                | ✅   |
 |                 | POST   | `/stores/:id/closing`                | 마감 확정                     | ✅   |
 |                 | DELETE | `/stores/:id/closing/:closingId`     | 마감 취소                     | ✅   |
 | **OCR**         | POST   | `/stores/:id/ocr/upload`             | 거래명세서 OCR 처리           | ✅   |
@@ -347,10 +339,10 @@ PW: [테스트 계정 PW]
 <summary><b>사용자 정의</b></summary>
 <br/>
 
-| 사용자             | 설명                                                    | 접근 방식                              |
-| ------------------ | ------------------------------------------------------- | -------------------------------------- |
-| **사장님 (Owner)** | 서비스 주 사용자. 주문 수락, 재고 관리, 발주, 마감 수행 | 카카오 소셜 로그인 후 대시보드 접근    |
-| **손님 (Guest)**   | 비회원. 별도 로그인 없이 주문만 가능                    | 테이블 QR 스캔 → 주문 페이지 바로 접근 |
+| 사용자             | 설명                                                    | 접근 방식                                                       |
+| ------------------ | ------------------------------------------------------- | --------------------------------------------------------------- |
+| **사장님 (Owner)** | 서비스 주 사용자. 주문 수락, 재고 관리, 발주, 마감 수행 | 카카오 소셜 로그인 또는 아이디/비밀번호 로그인 후 대시보드 접근 |
+| **손님 (Guest)**   | 비회원. 별도 로그인 없이 주문만 가능                    | 테이블 QR 스캔 → 주문 페이지 바로 접근                          |
 
 </details>
 
@@ -387,10 +379,10 @@ PW: [테스트 계정 PW]
 | --- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | 1   | **QR 기반 비대면 주문**  | 테이블 QR 스캔 → 손님 주문 → SSE 실시간 수신                                                                                                         | SSE, React Query              |
 | 2   | **OCR 자동 입고 처리**   | 거래명세서 촬영 → CLOVA OCR 텍스트 추출 → Gemini 2.5 Flash 구조화 파싱 → 경고 검증 → 수동 검수 확정                                                  | Naver CLOVA, Gemini 2.5 Flash |
-| 3   | **AI 발주 가이드**       | 6가지 트리거 필터링 → Gemini 2.5 Flash 발주량·추천 이유 생성 → 서버사이드 긴급도 계산(critical/warning/expiry) → BOX·BTL 단위 역산 표시              | Google Gemini                 |
+| 3   | **AI 발주 가이드**       | 6가지 트리거 필터링 → Gemini 2.5 Flash 발주량·추천 이유 생성 → 서버사이드 긴급도 계산(critical/warning/expiry/recommend) → BOX·BTL 단위 역산 표시    | Google Gemini                 |
 | 4   | **마감하기**             | 주문 수락 시 즉시 재고 차감 → 마감 시 이론값(orderDeductedAmount)과 실측값(remainingStock) 비교 → 보정값(adjustmentAmount) 기록·확정. 소급 마감 지원 | Recipe 기반 하이브리드 차감   |
 | 5   | **통합 대시보드**        | 실시간 주문·재고·매출 현황 한 화면에서 관리                                                                                                          | SSE, React Query              |
-| 6   | **카카오 소셜 로그인**   | 카카오 OAuth 2.0 → JWT 발급 (Access 15분 / Refresh 7일)                                                                                              | Kakao OAuth, JWT              |
+| 6   | **로그인 & 인증**        | 카카오 OAuth 2.0 소셜 로그인 + 초대 코드 기반 아이디/비밀번호 로그인 → JWT 발급 (Access 15분 / Refresh 7일)                                          | Kakao OAuth, JWT, bcrypt      |
 | 7   | **메뉴·레시피 관리**     | 메뉴 이미지 업로드, Gemini AI 메뉴 스캔, 레시피 재료 매핑                                                                                            | Supabase Storage, Gemini      |
 | 8   | **안전재고 경고 시스템** | 안전재고 비율 설정 → 상태별 경고 (normal/warning/critical/depleted)                                                                                  | 재고 계산 로직                |
 | 9   | **멀티 스토어**          | 초대 코드로 매장 참여, Owner/Staff 역할별 권한 관리                                                                                                  | JWT, Role-based Auth          |
@@ -430,7 +422,7 @@ PW: [테스트 계정 PW]
 <br/>
 
 ```
-카카오 로그인
+카카오 로그인 (또는 초대 코드 기반 아이디/비밀번호 로그인)
 → 초기 세팅 위저드 진입
 → 가게 기본 정보 입력 (이름, 업종, 카테고리)
 → 영업 시간 설정
@@ -585,7 +577,7 @@ sequenceDiagram
     B->>B: 14일·3일 소비 평균 + 요일별 매출 패턴(8주) 수집
     B->>G: 식자재 컨텍스트 블록 + 매장 패턴 데이터 (temperature=0.3)
     G-->>B: ingredientId + recommendedOrderAmount + 추천 이유(reason)
-    B->>B: calcStatus()로 긴급도 서버사이드 계산 (critical / warning / expiry)
+    B->>B: calcStatus()로 긴급도 서버사이드 계산 (critical / warning / expiry / recommend)
     B->>B: purchaseConversions 역산 → BOX·BTL 단위 수량 변환
     B->>B: orderGuides DB 저장
     B-->>F: 발주 가이드 반환 (추천량 + 이유 + 긴급도 + 발주 단위 수량)
@@ -619,7 +611,7 @@ sequenceDiagram
     F->>U: 미리보기 화면 — 이론 차감량 확인
 
     U->>F: 식자재별 실제 잔여 재고(remainingStock) 직접 입력
-    F->>B: POST /closing/confirm {remainingStock}
+    F->>B: POST /closing {inventoryDeductions}
     B->>B: actualUsage = openingStock - remainingStock
     B->>B: adjustmentAmount = actualUsage - orderDeductedAmount (보정값 = 이론·실제 차이)
     B->>DB: currentStock = remainingStock 저장 + closingDeductions 기록
@@ -627,7 +619,7 @@ sequenceDiagram
 
     Note over U,F: 마감 취소 시
     U->>F: 마감 취소 클릭
-    F->>B: POST /closing/cancel
+    F->>B: DELETE /closing/:closingId
     B->>DB: currentStock += adjustmentAmount (보정값만 복원, 주문 차감분은 유지)
     B-->>F: 취소 완료
 ```
@@ -1026,6 +1018,15 @@ adjustmentAmount     = actualUsage - orderDeductedAmount (보정값 = 이론과 
 | **소비 가속**        | 최근 3일 평균이 14일 평균 대비 50% 이상 급증 + 7일 내 소진 예상 |
 | **재발주 주기 초과** | 마지막 입고 후 경과일이 평균 입고 주기의 1.2배 초과             |
 
+필터링 후 각 식자재에 4가지 결과 상태(status) 중 하나를 부여:
+
+| 상태        | 의미                                                  | 표시        | `recommendedOrderAmount` |
+| ----------- | ----------------------------------------------------- | ----------- | ------------------------ |
+| `critical`  | 안전재고 50% 미만 — 즉시 발주 필요                    | 빨강        | > 0                      |
+| `warning`   | 안전재고 미달 — 발주 필요                             | 노랑        | > 0                      |
+| `expiry`    | 유통기한 임박 + 발주 필요 (폐기 후 재발주)            | 주황        | > 0                      |
+| `recommend` | 유통기한 임박이지만 발주 불필요 — 소진 후 재발주 권장 | 파랑 (참고) | = 0                      |
+
 </details>
 
 <details>
@@ -1364,7 +1365,7 @@ develop ──→ release/vX.Y.Z ──→ main
 - **OCR 결과 자동 확정 불가** — 반드시 수동 검수 단계를 거쳐야 함
 - **마감 재고 자동 차감 불가** — 사용자 검토·수정 후 최종 확정 필수
 - JWT 토큰 localStorage 저장 (XSS 취약점 존재, httpOnly 쿠키 마이그레이션 예정)
-- **카카오 소셜 로그인만 지원** (이메일·일반 회원가입 미지원)
+- **일반 이메일 회원가입 미지원** — 카카오 소셜 로그인 또는 초대 코드 기반 아이디/비밀번호 계정으로만 가입 가능
 - 회원 탈퇴 시 가게 데이터(재고·메뉴·레시피 등) **초기화 선행 필수**
 
 <br/>
