@@ -9,8 +9,8 @@
 
 <table width="100%" border="0">
   <tr>
-    <td><a href="https://baro-web.vercel.app/"><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EC%8B%A4%EC%A0%9C%20%EC%9A%B4%EC%98%81%20%EC%A4%91%EC%9D%B8%20BARO%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
-    <td><a href="https://qa-baro-web.vercel.app/"><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B2%80%EC%A6%9D%20%ED%99%98%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=449CD4&text=BARO%20서비스%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EC%8B%A4%EC%A0%9C%20%EC%9A%B4%EC%98%81%20%EC%A4%91%EC%9D%B8%20BARO%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
+    <td><a href=""><img src="https://capsule-render.vercel.app/api?type=transparent&height=220&color=72B4DE&text=BARO%20QA%20링크&section=header&fontColor=000000&textBg=false&animation=twinkling&desc=%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B2%80%EC%A6%9D%20%ED%99%98%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4&descAlignY=70&descSize=18&stroke=cacaca&reversal=false" width="100%" /></a></td>
   </tr>
 </table>
 
@@ -216,40 +216,70 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 <summary><b>엔드포인트 목록</b></summary>
 <br/>
 
-| 도메인          | 메서드 | 경로                                 | 설명                          | 인증 |
-| --------------- | ------ | ------------------------------------ | ----------------------------- | ---- |
-| **Auth**        | GET    | `/auth/kakao`                        | 카카오 OAuth 로그인           | ❌   |
-|                 | GET    | `/auth/kakao/callback`               | 카카오 OAuth 콜백             | ❌   |
-|                 | POST   | `/auth/login`                        | 아이디/비밀번호 로그인        | ❌   |
-|                 | POST   | `/auth/register`                     | 회원가입 (초대 코드 필요)     | ❌   |
-|                 | POST   | `/auth/refresh`                      | 토큰 갱신                     | ❌   |
-|                 | POST   | `/auth/logout`                       | 로그아웃                      | ✅   |
-| **Users**       | GET    | `/users/me`                          | 내 정보 조회                  | ✅   |
-|                 | GET    | `/users/me/stores`                   | 내 가게 목록                  | ✅   |
-| **Stores**      | POST   | `/stores/setup`                      | 가게 초기 세팅                | ✅   |
-|                 | GET    | `/stores/:id`                        | 가게 정보 조회                | ✅   |
-|                 | PATCH  | `/stores/:id`                        | 가게 정보 수정                | ✅   |
-|                 | POST   | `/stores/:id/invite-code`            | 초대 코드 재발급              | ✅   |
-|                 | DELETE | `/stores/:id`                        | 가게 삭제                     | ✅   |
-| **Orders**      | POST   | `/stores/:id/orders`                 | 주문 생성 (손님, 인증 불필요) | ❌   |
-|                 | GET    | `/stores/:id/orders`                 | 주문 목록 조회                | ✅   |
-|                 | PATCH  | `/stores/:id/orders/:orderId/status` | 주문 상태 변경                | ✅   |
-|                 | GET    | `/stores/:id/orders/stream`          | SSE 실시간 스트림             | ✅   |
-| **Menus**       | GET    | `/stores/:id/menus`                  | 메뉴 목록                     | ✅   |
-|                 | POST   | `/stores/:id/menus`                  | 메뉴 생성                     | ✅   |
-|                 | POST   | `/stores/:id/menus/ocr-scan`         | AI 메뉴 스캔                  | ✅   |
-| **Ingredients** | GET    | `/stores/:id/ingredients`            | 재고 목록                     | ✅   |
-|                 | POST   | `/stores/:id/ingredients/inbound`    | 입고 등록                     | ✅   |
-| **Closing**     | GET    | `/stores/:id/closing/preview`        | 마감 미리보기                 | ✅   |
-|                 | GET    | `/stores/:id/closing`                | 마감 이력 조회                | ✅   |
-|                 | GET    | `/stores/:id/closing/:closingId`     | 마감 상세 조회                | ✅   |
-|                 | POST   | `/stores/:id/closing`                | 마감 확정                     | ✅   |
-|                 | DELETE | `/stores/:id/closing/:closingId`     | 마감 취소                     | ✅   |
-| **OCR**         | POST   | `/stores/:id/ocr/upload`             | 거래명세서 OCR 처리           | ✅   |
-| **Order Guide** | GET    | `/stores/:id/order-guide`            | 발주 가이드 조회              | ✅   |
-|                 | POST   | `/stores/:id/order-guide/generate`   | 발주 가이드 생성              | ✅   |
-| **Dashboard**   | GET    | `/stores/:id/dashboard/stats`        | 대시보드 통계                 | ✅   |
-|                 | GET    | `/stores/:id/dashboard/sales`        | 12개월 매출                   | ✅   |
+| 도메인                  | 메서드 | 경로                                        | 설명                          | 인증 |
+| ----------------------- | ------ | ------------------------------------------- | ----------------------------- | ---- |
+| **Auth**                | GET    | `/auth/kakao`                               | 카카오 OAuth 로그인           | ❌   |
+|                         | GET    | `/auth/kakao/callback`                      | 카카오 OAuth 콜백             | ❌   |
+|                         | POST   | `/auth/login`                               | 아이디/비밀번호 로그인        | ❌   |
+|                         | POST   | `/auth/register`                            | 회원가입 (초대 코드 필요)     | ❌   |
+|                         | POST   | `/auth/refresh`                             | 토큰 갱신                     | ❌   |
+|                         | POST   | `/auth/logout`                              | 로그아웃                      | ✅   |
+| **Users**               | GET    | `/users/me`                                 | 내 정보 조회                  | ✅   |
+|                         | PATCH  | `/users/me`                                 | 이름 변경                     | ✅   |
+|                         | DELETE | `/users/me`                                 | 회원 탈퇴                     | ✅   |
+|                         | GET    | `/users/me/stores`                          | 내 가게 목록                  | ✅   |
+| **Stores**              | POST   | `/stores/setup`                             | 가게 초기 세팅                | ✅   |
+|                         | POST   | `/stores/join`                              | 초대코드로 가게 합류          | ✅   |
+|                         | GET    | `/stores/:id`                               | 가게 정보 조회                | ✅   |
+|                         | PATCH  | `/stores/:id`                               | 가게 정보 수정                | ✅   |
+|                         | DELETE | `/stores/:id`                               | 가게 삭제                     | ✅   |
+|                         | POST   | `/stores/:id/invite-code`                   | 초대 코드 재발급              | ✅   |
+|                         | POST   | `/stores/:id/reset`                         | 가게 데이터 초기화            | ✅   |
+|                         | PATCH  | `/stores/:id/operating-hours`               | 영업 시간 수정                | ✅   |
+|                         | GET    | `/stores/:id/members`                       | 멤버 목록 조회                | ✅   |
+|                         | DELETE | `/stores/:id/members/:userId`               | 멤버 강퇴                     | ✅   |
+|                         | DELETE | `/stores/:id/members/me`                    | 가게 나가기 (Staff)           | ✅   |
+| **Open**                | POST   | `/stores/:id/open`                          | 영업 개점 (businessDate 생성) | ✅   |
+|                         | GET    | `/stores/:id/open/status`                   | 영업 개점 상태 조회           | ✅   |
+| **Orders**              | POST   | `/stores/:id/orders`                        | 주문 생성 (손님, 인증 불필요) | ❌   |
+|                         | GET    | `/stores/:id/orders`                        | 주문 목록 조회                | ✅   |
+|                         | PATCH  | `/stores/:id/orders/:orderId/status`        | 주문 상태 변경                | ✅   |
+|                         | GET    | `/stores/:id/orders/stream`                 | SSE 실시간 스트림             | ✅   |
+| **Menus**               | GET    | `/stores/:id/menus`                         | 메뉴 목록                     | ✅   |
+|                         | POST   | `/stores/:id/menus`                         | 메뉴 생성                     | ✅   |
+|                         | PATCH  | `/stores/:id/menus/:menuId`                 | 메뉴 수정                     | ✅   |
+|                         | DELETE | `/stores/:id/menus/:menuId`                 | 메뉴 삭제                     | ✅   |
+|                         | POST   | `/stores/:id/menus/upload`                  | 메뉴 이미지 업로드            | ✅   |
+|                         | POST   | `/stores/:id/menus/ocr-scan`                | AI 메뉴 스캔                  | ✅   |
+| **Menu Categories**     | GET    | `/stores/:id/menu-categories`               | 메뉴 카테고리 목록            | ✅   |
+|                         | POST   | `/stores/:id/menu-categories`               | 메뉴 카테고리 생성            | ✅   |
+|                         | PATCH  | `/stores/:id/menu-categories/:id`           | 메뉴 카테고리 수정            | ✅   |
+|                         | PATCH  | `/stores/:id/menu-categories/reorder`       | 메뉴 카테고리 순서 변경       | ✅   |
+|                         | DELETE | `/stores/:id/menu-categories/:id`           | 메뉴 카테고리 삭제            | ✅   |
+| **Ingredients**         | GET    | `/stores/:id/ingredients`                   | 재고 목록                     | ✅   |
+|                         | POST   | `/stores/:id/ingredients`                   | 식자재 등록                   | ✅   |
+|                         | PATCH  | `/stores/:id/ingredients/:id`               | 식자재 수정                   | ✅   |
+|                         | DELETE | `/stores/:id/ingredients/:id`               | 식자재 삭제                   | ✅   |
+|                         | POST   | `/stores/:id/ingredients/inbound`           | 입고 등록                     | ✅   |
+| **Recipes**             | GET    | `/stores/:id/recipes`                       | 레시피 목록                   | ✅   |
+|                         | POST   | `/stores/:id/recipes`                       | 레시피 생성                   | ✅   |
+|                         | DELETE | `/stores/:id/recipes/:recipeId`             | 레시피 삭제                   | ✅   |
+| **Unit Conversions**    | PUT    | `/stores/:id/unit-conversions`              | 단위 변환 계수 등록/수정      | ✅   |
+|                         | DELETE | `/stores/:id/unit-conversions/:id`          | 단위 변환 계수 삭제           | ✅   |
+| **Closing**             | GET    | `/stores/:id/closing/preview`               | 마감 미리보기                 | ✅   |
+|                         | GET    | `/stores/:id/closing`                       | 마감 이력 조회                | ✅   |
+|                         | GET    | `/stores/:id/closing/:closingId`            | 마감 상세 조회                | ✅   |
+|                         | POST   | `/stores/:id/closing`                       | 마감 확정                     | ✅   |
+|                         | DELETE | `/stores/:id/closing/:closingId`            | 마감 취소                     | ✅   |
+| **OCR**                 | POST   | `/stores/:id/ocr/upload`                    | 거래명세서 OCR 처리           | ✅   |
+|                         | DELETE | `/stores/:id/ocr/invoice-image`             | 거래명세서 이미지 삭제        | ✅   |
+| **Order Guide**         | GET    | `/stores/:id/order-guide`                   | 발주 가이드 조회              | ✅   |
+|                         | POST   | `/stores/:id/order-guide/generate`          | 발주 가이드 생성              | ✅   |
+| **Theme**               | GET    | `/stores/:id/theme`                         | 가게 테마 조회                | ✅   |
+|                         | PATCH  | `/stores/:id/theme`                         | 가게 테마 수정                | ✅   |
+|                         | POST   | `/stores/:id/theme/banner`                  | 배너 이미지 업로드            | ✅   |
+| **Dashboard**           | GET    | `/stores/:id/dashboard/stats`               | 대시보드 통계                 | ✅   |
+|                         | GET    | `/stores/:id/dashboard/sales`               | 12개월 매출                   | ✅   |
 
 <br/>
 </details>
@@ -263,12 +293,8 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=테스트%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-- 테스트 가이드에 대한 문서는 추가 예정입니다.
-
-```
-ID: [테스트 계정 ID]
-PW: [테스트 계정 PW]
-```
+- [데모 계정 테스트 가이드](https://www.notion.so/38e568bab82080dc87a1f46f4be106a7?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
+- [서비스 테스트 가이드](https://www.notion.so/38e568bab820805ea0ffd2099f467014?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
 
 <br/>
 <br/>
@@ -339,10 +365,10 @@ PW: [테스트 계정 PW]
 <summary><b>사용자 정의</b></summary>
 <br/>
 
-| 사용자             | 설명                                                    | 접근 방식                                                       |
-| ------------------ | ------------------------------------------------------- | --------------------------------------------------------------- |
-| **사장님 (Owner)** | 서비스 주 사용자. 주문 수락, 재고 관리, 발주, 마감 수행 | 카카오 소셜 로그인 또는 아이디/비밀번호 로그인 후 대시보드 접근 |
-| **손님 (Guest)**   | 비회원. 별도 로그인 없이 주문만 가능                    | 테이블 QR 스캔 → 주문 페이지 바로 접근                          |
+| 사용자             | 설명                                                    | 접근 방식                              |
+| ------------------ | ------------------------------------------------------- | -------------------------------------- |
+| **사장님 (Owner)** | 서비스 주 사용자. 주문 수락, 재고 관리, 발주, 마감 수행 | 카카오 소셜 로그인 또는 아이디/비밀번호 로그인 후 계정 홈(/my-stores) 접근 → 가게 선택 후 대시보드 |
+| **손님 (Guest)**   | 비회원. 별도 로그인 없이 주문만 가능                    | 테이블 QR 스캔 → 주문 페이지 바로 접근 |
 
 </details>
 
@@ -379,7 +405,7 @@ PW: [테스트 계정 PW]
 | --- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | 1   | **QR 기반 비대면 주문**  | 테이블 QR 스캔 → 손님 주문 → SSE 실시간 수신                                                                                                         | SSE, React Query              |
 | 2   | **OCR 자동 입고 처리**   | 거래명세서 촬영 → CLOVA OCR 텍스트 추출 → Gemini 2.5 Flash 구조화 파싱 → 경고 검증 → 수동 검수 확정                                                  | Naver CLOVA, Gemini 2.5 Flash |
-| 3   | **AI 발주 가이드**       | 6가지 트리거 필터링 → Gemini 2.5 Flash 발주량·추천 이유 생성 → 서버사이드 긴급도 계산(critical/warning/expiry/recommend) → BOX·BTL 단위 역산 표시    | Google Gemini                 |
+| 3   | **AI 발주 가이드**       | 6가지 트리거 필터링 → Gemini 2.5 Flash 발주량·추천 이유 생성 → 서버사이드 긴급도 계산(critical/warning/expiry/recommend) → BOX·BTL 단위 역산 표시  | Google Gemini                 |
 | 4   | **마감하기**             | 주문 수락 시 즉시 재고 차감 → 마감 시 이론값(orderDeductedAmount)과 실측값(remainingStock) 비교 → 보정값(adjustmentAmount) 기록·확정. 소급 마감 지원 | Recipe 기반 하이브리드 차감   |
 | 5   | **통합 대시보드**        | 실시간 주문·재고·매출 현황 한 화면에서 관리                                                                                                          | SSE, React Query              |
 | 6   | **로그인 & 인증**        | 카카오 OAuth 2.0 소셜 로그인 + 초대 코드 기반 아이디/비밀번호 로그인 → JWT 발급 (Access 15분 / Refresh 7일)                                          | Kakao OAuth, JWT, bcrypt      |
@@ -423,7 +449,9 @@ PW: [테스트 계정 PW]
 
 ```
 카카오 로그인 (또는 초대 코드 기반 아이디/비밀번호 로그인)
-→ 초기 세팅 위저드 진입
+→ 계정 홈(/my-stores) 이동
+→ 가게 추가하기 → /store-selection
+→ 새 가게 등록 → 초기 세팅 위저드(/initial-setup) 진입
 → 가게 기본 정보 입력 (이름, 업종, 카테고리)
 → 영업 시간 설정
 → 메뉴 등록 (이미지 업로드 또는 AI 스캔)
@@ -748,11 +776,11 @@ src/
    ├─ api/                # Axios 인스턴스, 인터셉터
    ├─ components/         # 공용 UI 컴포넌트
    ├─ hooks/              # 공용 훅
-   ├─ store/              # 전역 Zustand 스토어
    ├─ utils/              # businessDate, apiError 등
    ├─ constants/
-   ├─ types/
-   └─ design-token/       # colors.css, spacing.css, typography.css
+   └─ types/
+   (Zustand 스토어는 features/*/store/ 각 도메인 내에 위치)
+   (디자인 토큰은 src/index.css @theme inline에 정의)
 ```
 
 <br/>
@@ -1020,12 +1048,12 @@ adjustmentAmount     = actualUsage - orderDeductedAmount (보정값 = 이론과 
 
 필터링 후 각 식자재에 4가지 결과 상태(status) 중 하나를 부여:
 
-| 상태        | 의미                                                  | 표시        | `recommendedOrderAmount` |
-| ----------- | ----------------------------------------------------- | ----------- | ------------------------ |
-| `critical`  | 안전재고 50% 미만 — 즉시 발주 필요                    | 빨강        | > 0                      |
-| `warning`   | 안전재고 미달 — 발주 필요                             | 노랑        | > 0                      |
-| `expiry`    | 유통기한 임박 + 발주 필요 (폐기 후 재발주)            | 주황        | > 0                      |
-| `recommend` | 유통기한 임박이지만 발주 불필요 — 소진 후 재발주 권장 | 파랑 (참고) | = 0                      |
+| 상태          | 의미                                       | 표시          | `recommendedOrderAmount` |
+| ------------- | ------------------------------------------ | ------------- | ------------------------ |
+| `critical`    | 안전재고 50% 미만 — 즉시 발주 필요         | 빨강          | > 0                      |
+| `warning`     | 안전재고 미달 — 발주 필요                  | 노랑          | > 0                      |
+| `expiry`      | 유통기한 임박 + 발주 필요 (폐기 후 재발주) | 주황          | > 0                      |
+| `recommend`   | 유통기한 임박이지만 발주 불필요 — 소진 후 재발주 권장 | 파랑 (참고) | = 0                |
 
 </details>
 
@@ -1344,7 +1372,7 @@ develop ──→ release/vX.Y.Z ──→ main
 
 | 문제 상황                  | 원인                              | 해결 방법                                     |
 | -------------------------- | --------------------------------- | --------------------------------------------- |
-| 로그인 후 화면이 안 넘어감 | 카카오 OAuth 콜백 처리 지연       | 브라우저 새로고침 후 `/dashboard`로 직접 이동 |
+| 로그인 후 화면이 안 넘어감 | 카카오 OAuth 콜백 처리 지연       | 브라우저 새로고침 후 `/my-stores`로 직접 이동 |
 | OCR 인식 결과가 엉뚱함     | 이미지 품질 불량 또는 비표준 서식 | 밝은 환경에서 재촬영, 검수 화면에서 수동 수정 |
 | 실시간 주문이 안 들어옴    | SSE 연결 끊김                     | 페이지 새로고침 (3초 후 자동 재연결)          |
 | 재고 기능이 비활성화됨     | 등록된 식자재 없음                | 가게 설정 → 식자재 먼저 등록                  |
@@ -1379,7 +1407,6 @@ develop ──→ release/vX.Y.Z ──→ main
 
 - [ ] httpOnly 쿠키 기반 JWT 저장으로 보안 강화
 - [ ] 푸시 알림 (PWA / FCM) — 주문 수신 시 알림
-- [ ] 다크 모드 (토글 UI 존재, 기능 완성 예정)
 - [ ] 매출 분석 심화 — 카테고리별·시간대별·메뉴별 통계
 - [ ] 바코드 스캔 기반 입고 처리
 - [ ] 멀티 테이블 동시 주문 현황 뷰
