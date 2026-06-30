@@ -58,6 +58,21 @@
 <br/>
 <br/>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=테스트%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
+
+- 해당 링크에 페이지별 가이드, 주요 기능별 가이드를 상세히 작성해두었습니다.
+- OCR 기능 테스트를 위한 이미지를 준비해두었습니다. 자유롭게 사용해주세요.
+- [데모 계정 테스트 가이드](https://www.notion.so/38e568bab82080dc87a1f46f4be106a7?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
+- [서비스 테스트 가이드](https://www.notion.so/38e568bab820805ea0ffd2099f467014?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
+- [OCR 기능 테스트용 이미지 제공](https://www.notion.so/OCR-38f568bab820803a85fcf47e4f85a1a8?source=copy_link)
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=배포%20환경&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 | 구분               | URL                                                     |
@@ -291,18 +306,6 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 <br/>
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=테스트%20가이드&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
-
-- [데모 계정 테스트 가이드](https://www.notion.so/38e568bab82080dc87a1f46f4be106a7?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
-- [서비스 테스트 가이드](https://www.notion.so/38e568bab820805ea0ffd2099f467014?v=336568bab82081e38ae9000cccf8aeea&source=copy_link)
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=프로젝트%20소개&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
 **BARO(바로)** 는 강원도 소규모 카페·식당 사장님을 위한 **OCR·AI 기반 올인원 가게 운영 SaaS**입니다.
@@ -381,16 +384,18 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=주요%20화면&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-| 화면                                                    | 설명                                                |
-| ------------------------------------------------------- | --------------------------------------------------- |
-| ![랜딩](./docs/images/screenshot-landing.png)           | **랜딩 페이지** — 서비스 소개 및 로그인 진입        |
-| ![대시보드](./docs/images/screenshot-dashboard.png)     | **대시보드** — 실시간 주문 수신, 재고·매출 현황     |
-| ![QR주문](./docs/images/screenshot-order.png)           | **손님 주문 페이지** — QR 스캔 후 메뉴 선택·주문    |
-| ![OCR](./docs/images/screenshot-ocr.png)                | **OCR 입고 처리** — 거래명세서 촬영 → 자동 디지털화 |
-| ![발주가이드](./docs/images/screenshot-order-guide.png) | **AI 발주 가이드** — AI 기반 발주량 추천            |
-| ![마감](./docs/images/screenshot-closing.png)           | **마감하기** — 레시피 기반 재고 자동 차감           |
-| ![재고](./docs/images/screenshot-inventory.png)         | **재고 현황** — 전체 재고 상태 및 안전재고 경고     |
-| ![설정](./docs/images/screenshot-settings.png)          | **가게 설정** — 메뉴·레시피·테이블·테마 관리        |
+| 화면                                               | 설명                                                                 |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| ![랜딩](./assets/screenshot-landing.png)           | **랜딩 페이지** — 서비스 소개 및 로그인 진입                         |
+| ![계정홈](./assets/screenshot-my-home.png)         | **계정 홈 페이지** — 가게 진입 및 가게 목록 편집                     |
+| ![가게 홈](./assets/screenshot-store-home.png)     | **가게 홈 페이지** — 가게 대시보드 진입 및 영업 시작 처리, 가게 설정 |
+| ![대시보드](./assets/screenshot-dashboard.png)     | **대시보드** — 실시간 주문 수신, 재고·매출 현황                      |
+| ![QR주문](./assets/screenshot-order.png)           | **손님 주문 페이지** — QR 스캔 후 메뉴 선택·주문                     |
+| ![OCR](./assets/screenshot-ocr.png)                | **OCR 입고 처리** — 거래명세서 촬영 → 자동 디지털화                  |
+| ![발주가이드](./assets/screenshot-order-guide.png) | **AI 발주 가이드** — AI 기반 발주량 추천                             |
+| ![마감](./assets/screenshot-closing.png)           | **마감하기** — 레시피 기반 재고 자동 차감                            |
+| ![재고](./assets/screenshot-inventory.png)         | **재고 현황** — 전체 재고 상태 및 안전재고 경고                      |
+| ![설정](./assets/screenshot-settings.png)          | **가게 설정** — 메뉴·레시피·테이블·테마 관리                         |
 
 <br/>
 <br/>
@@ -455,7 +460,7 @@ Swagger UI를 통해 전체 API를 인터랙티브하게 확인할 수 있습니
 → 가게 기본 정보 입력 (이름, 업종, 카테고리)
 → 영업 시간 설정
 → 메뉴 등록 (이미지 업로드 또는 AI 스캔)
-→ 식자재 등록 (이름, 단위, 초기 재고)
+→ 식자재 등록 (이름, 단위)
 → 레시피 설정 (메뉴 ↔ 식자재 매핑)
 → 안전재고 비율 설정 → 완료
 ```
@@ -1028,12 +1033,12 @@ adjustmentAmount     = actualUsage - orderDeductedAmount (보정값 = 이론과 
 </details>
 
 <details>
-<summary><b>13. 발주 가이드 생성 시점 및 트리거 기준</b></summary>
+<summary><b>13. 발주 가이드 생성 트리거 기준</b></summary>
 <br/>
 
-**고민**: 발주 가이드를 언제 생성할 것인가. 마감 직후 자동 생성하면 편리하지만, 사장님이 원하는 시점에 최신 데이터로 다시 생성하고 싶을 수도 있음. 발주 필요 기준도 단순 안전재고 미달만으로는 부족함.
+**고민**: 발주 가이드를 어떤 기준에 의해 발생시킬 것인가
 
-**결정**: 온디맨드(on-demand) 생성으로 설계. 사장님이 원하는 시점에 생성 요청하면 그 시점의 최신 재고·소비 데이터로 분석.
+**결정**:
 
 발주 필요 식자재 필터링 기준을 **6가지 트리거**로 세분화:
 
