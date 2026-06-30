@@ -22,7 +22,11 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=449CD4&height=45&text=시연영상&fontSize=18&fontColor=ffffff&fontAlign=50&fontAlignY=50" width="100%" />
 
-[![Video Label](http://img.youtube.com/vi/3l8IVkU2te4&t/0.jpg)](https://youtu.be/3l8IVkU2te4&t)
+<a href="https://youtu.be/3l8IVkU2te4" target="_blank">
+  <img src="https://img.youtube.com/vi/3l8IVkU2te4/maxresdefault.jpg" width="700" alt="Demo Video"/>
+</a>
+
+클릭 시 유튜브로 이동합니다.
 
 <br/>
 <br/>
